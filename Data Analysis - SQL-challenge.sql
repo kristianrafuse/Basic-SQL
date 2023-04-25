@@ -13,16 +13,30 @@ WHERE hire_date BETWEEN '1986-01-01' and '1986-12-31'
 -- 3. List the manager of each department along with their department number, department name, employee number, last name, and first name.
 
 SELECT dm.dept_no, d.dept_name, dm.emp_no, e.last_name, e.first_name
-FROM dept_manager AS dm
-INNER JOIN departments AS d ON dm.dept_no = d.dept_no
-INNER JOIN employees AS e ON dm.emp_no = e.emp_no;
+FROM dept_manager as dm
+INNER JOIN departments as d ON dm.dept_no = d.dept_no
+INNER JOIN employees as e ON dm.emp_no = e.emp_no;
 
 -- 4. List the department number for each employee along with that employee’s employee number, last name, first name, and department name.
 
 SELECT e.emp_no, e.last_name, e.first_name, d.dept_name
-FROM employees e
+FROM employees as e
 JOIN dept_emp de ON e.emp_no = de.emp_no
 JOIN departments d ON de.dept_no = d.dept_no;
+
+-- 5. List first name, last name, and sex of each employee whose first name is Hercules and whose last name begins with the letter B.
+
+SELECT first_name, last_name, sex 
+FROM employees
+WHERE first_name = 'Hercules' AND last_name LIKE 'B%';
+
+-- 6. List each employee in the Sales department, including their employee number, last name, and first name.
+
+SELECT e.emp_no, e.last_name, e.first_name
+FROM employees as e
+JOIN dept_emp as de ON e.emp_no = de.emp_no
+JOIN departments as d ON de.dept_no = d.dept_no
+WHERE d.dept_name = 'Sales';
 
 --TABLE REFERENCES
 --select * from departments
