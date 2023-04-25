@@ -74,3 +74,11 @@ REFERENCES "titles" ("title_id");
 
 --CSVs imported via Import/Export Data...
 --Database properties updated Datestyle = ISO, MDY
+
+--Eg code below will run to import if permissions on local file are changed. 
+--copy public.departments (dept_no, dept_name)
+--FROM 'C:\Users\krist\GitHub\SQL-challenge\EmployeeSQL\data\departments.csv'
+--DELIMITER ',' 
+--CSV HEADER ENCODING 'UTF8' 
+--QUOTE '"' 
+--ESCAPE '''';
