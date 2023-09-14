@@ -1,11 +1,11 @@
 Basic SQL
-
+------
 In this example, I design an ERD with tables to hold the data from the CSV file, then import the CSV files into a SQL database, and use SQL commands to interact with the database. 
 
 In the table schema for each of the six CSV files, I specify the data types, primary keys, foreign keys, and other constraints and create the tables in the correct order to handle the foreign keys.
 
 Using SQL commands, including various SELECT and JOIN commands, I can determine the following from the databases: 
-
+------
 List the employee number, last name, first name, sex, and salary of each employee.
 List the first name, last name, and hire date for the employees who were hired in 1986.
 List the manager of each department along with their department number, department name, employee number, last name, and first name.
